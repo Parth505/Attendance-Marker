@@ -1,0 +1,44 @@
+<!--{% for i in gt  %}
+
+{{i.full_name}} <br>  
+{{i.roll_number}}
+{% endfor  %} -->
+{% extends "nav_base.html" %}
+
+
+
+{% block nav %}
+
+
+<div class="jumbotron">
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">Full Name</th>
+      <th scope="col">Roll Number</th>
+      <th scope="col">Time and Date</th>
+      <th scope="col">Class and Section</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{%for i in gt%}                
+    <tr>
+    	
+      
+      <td>   {{i.full_name}}   </td>
+      <td>   {{i.roll_number}}   </td>
+      <td>    {{i.time}}        </td>
+      <td>    {{i.section_class}}    </td>
+
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+</div>
+
+{% endblock %}

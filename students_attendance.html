@@ -1,0 +1,127 @@
+{% extends "nav_base.html" %}
+
+
+
+{% block nav %}
+<div class='container'>
+
+
+
+<div class="container">
+{% with messages = get_flashed_messages(with_categories=true) %}
+{%if messages %}
+{% for category,message in messages %}
+<div class="alert alert-{{category}}">  
+{{message}}
+ </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+
+
+
+<!--<p class="h2">Register</p>
+	</div>
+<hr> 
+	 -->
+
+
+<div class="container">
+<form method="POST" action="">
+{{form.hidden_tag()}}
+<fieldset class="form-group">
+	<legend class="border-bottom mb-4">Attendance Form</legend>
+	
+
+	
+
+<div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+
+      
+
+		
+	
+		
+
+	<div class="form-group">
+                    {{ form.lecture_key.label(class="form-control-label") }}
+
+                    {% if form.lecture_key.errors %}
+                        {{ form.lecture_key(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.lecture_key.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.lecture_key(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+		
+	
+
+	
+
+
+	<div class="form-group">
+                    {{ form.roll_number.label(class="form-control-label") }}
+
+                    {% if form.roll_number.errors %}
+                        {{ form.roll_number(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.roll_number.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.roll_number(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.section_class.label(class="form-control-label") }}
+
+                    {% if form.section_class.errors %}
+                        {{ form.section_class(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.section_class.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.section_class(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+
+
+
+
+                
+		
+
+		</fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "nav_base.html" %}
+
+
+
+{% block nav %}
+
+
+
+<div class="container">
+{% with messages = get_flashed_messages(with_categories=true) %}
+{%if messages %}
+{% for category,message in messages %}
+<div class="alert alert-{{category}}">  
+{{message}}
+ </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+
+
+<div class='jumbotron'> 
+<div class="container">
+	<p class="h5"> Current UserName </p>
+<input class="form-control h1"type="text" placeholder="{{current_user.username}}" readonly>
+<a href="{{ (url_for('update_username'))}}">Update UserName </a>
+
+
+
+	<p class="h5"> Current Lecture Key</p>
+<input class="form-control h1"type="text" placeholder="{{current_user.lecture_key }}" readonly>
+<a href="{{ (url_for('update_lecture_key'))}}">Update Lecture Key</a>
+</div>
+</div>
+</div>
+
+
+<!----{{current_user.username}}  -->
+
+
+{% endblock %}

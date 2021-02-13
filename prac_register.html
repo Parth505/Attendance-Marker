@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	{{form.hidden_tag()}}
+
+
+
+
+
+
+<form method="POST">
+
+	<ul>
+
+		<li> {{form.full_name .label}}   {{form.full_name }}</li>
+		<li> {{form.lecture_key  .label}}   {{form.lecture_key }}</li> 
+		<li> {{form.passcode .label}}   {{form.passcode }}</li>
+		{{form.submit()}}
+
+		
+
+	</ul>
+
+
+</form>
+</body>
+</html>
